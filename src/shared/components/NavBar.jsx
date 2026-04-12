@@ -1,11 +1,11 @@
 
 import { Link } from "react-router-dom";
-import { UseCartContext } from "../../features/cart/contexts/CartContext";
+import { useCart } from "../../features/cart/contexts/CartContext";
 import SearchBar from "./SearchBar";
 import { ShoppingCart, User2 } from "lucide-react";
 
 const NavBar = ( {title, subTitle}) => {
-  const { cartSize } = UseCartContext();
+  const { cartSize } = useCart();
   
   return (
     <nav className="flex flex-row justify-between sticky top-0 bg-white z-10 border-b">

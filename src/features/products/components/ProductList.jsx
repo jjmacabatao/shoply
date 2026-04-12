@@ -1,12 +1,12 @@
 import React from 'react'
 import ProductCard from './ProductCard'
-import { UseProductContext } from '../contexts/ProductContext';
-import { UseCartContext } from '../../cart/contexts/CartContext';
+import { useProduct } from '../contexts/ProductContext';
+import { useCart } from '../../cart/contexts/CartContext';
 
 const ProductList = () => {
   
-  const { products, handleOnclickAddToFavorite, favorite } = UseProductContext();
-  const { addToCart } = UseCartContext();
+  const { products, handleOnclickAddToFavorite, favorite } = useProduct();
+  const { addToCart } = useCart();
   const productCount = products.length;
 
 

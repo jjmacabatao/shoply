@@ -3,16 +3,15 @@ import { useParams } from 'react-router-dom'
 import { fetchProduct } from '../features/products/services/productService';
 import ProductDetails from '../features/products/components/ProductDetails';
 import MainLayout from '../layouts/MainLayout';
-import { UseCartContext } from '../features/cart/contexts/CartContext';
+import { useCart } from '../features/cart/contexts/CartContext';
 
 const ProductDetailsPage = () => {
     const {id} = useParams();
     const [product, setProduct] = useState([]);
-    const { addToCart } = UseCartContext();
+    const { addToCart } = useCart();
 
     useEffect(() => {
         fetchProduct(id).then(setProduct);
-    // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
 
   return (

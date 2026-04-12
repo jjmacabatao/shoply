@@ -1,11 +1,10 @@
 import React from 'react'
-import Button from './Button'
-import { UseProductContext } from '../../features/products/contexts/ProductContext';
+import { useProduct } from '../../features/products/contexts/ProductContext';
 import DropDown from './DropDown';
 
 const SearchBar = ({placeholder}) => {
-  const { setSearchKeyword,searchKeyword, productCategories, selectedCategory, setSelectedCategory } = UseProductContext();
-
+  const { setSearchKeyword,searchKeyword, productCategories, selectedCategory, setSelectedCategory } = useProduct();
+  
   return (
     <section className='flex flex-row justify-end-safe gap-2 items-center w-250'>
         <div className='flex flex-row gap-2'>
