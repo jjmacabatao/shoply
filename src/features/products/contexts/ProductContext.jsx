@@ -8,9 +8,17 @@ export const ProductProvider = ( {children} ) => {
     const [products, setProduct] = useState([]); // products state
     const [favorite, setFavorite] = useState([]); // favorite products state
     const [selectedCategory, setSelectedCategory] = useState(""); // selected category state (for filtering products)
+    const [loading, setLoading] = useState(true);
     
     useEffect(() => {
-        fetchProducts().then(setProduct);
+        fetchProducts()
+            .then(setProduct)
+            .catch((res) => {
+                console.error(res);
+                setLoading(false);
+            })
+            .finally(() => setLoading(false));
+        
     }, []);
 
     useEffect(() => {
@@ -47,10 +55,12 @@ export const ProductProvider = ( {children} ) => {
         favorite,
         productCategories: filteredProductsCategories,
         setSelectedCategory,
+        loading,
+        setLoading,
     }
 
 
-    return (
+    return ( 
         <ProductContext.Provider value={value}>
             {children}
         </ProductContext.Provider>

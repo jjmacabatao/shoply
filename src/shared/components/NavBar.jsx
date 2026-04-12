@@ -2,7 +2,7 @@
 import { Link } from "react-router-dom";
 import { useCart } from "../../features/cart/contexts/CartContext";
 import SearchBar from "./SearchBar";
-import { ShoppingCart, User2 } from "lucide-react";
+import { List, ShoppingCart, User2 } from "lucide-react";
 
 const NavBar = ( {title, subTitle}) => {
   const { cartSize } = useCart();
@@ -18,6 +18,10 @@ const NavBar = ( {title, subTitle}) => {
       </div>
       <SearchBar placeholder={"Search . . ."}/>
       <div className='flex items-center gap-4 px-10 pb-2 text-green-600 relative h-26'>
+        <Link to="/products">
+          <List size={35} className='cursor-pointer'/>
+        </Link>
+
         <Link to="/cart">
           <ShoppingCart size={35} className='cursor-pointer'/>
         </Link>
@@ -25,7 +29,7 @@ const NavBar = ( {title, subTitle}) => {
         <User2  size={35} className='cursor-pointer'/>
         {
           cartSize > 0 && (
-            <span className='absolute text-[14px] text-white font-semibold px-1.5 bg-red-600 rounded-full ml-5 -mt-5 animate-bounce'>
+            <span className='absolute text-[14px] text-white font-semibold px-1.5 bg-red-600 rounded-full ml-18 -mt-5 animate-bounce'>
               {cartSize}
             </span>
           )

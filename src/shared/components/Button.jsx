@@ -1,9 +1,9 @@
 import React from 'react'
 import { variants } from '../styles/global'
 
-const Button = ({children, variant, onClick}) => {
+const Button = ({children, variant, disabled = false, onClick}) => {
   return (
-    <button onClick={onClick} className={`${variants[variant]}`}>
+    <button onClick={onClick} className={`${variants[variant]}`} disabled={disabled}>
         {children}
     </button>
   )

@@ -3,14 +3,16 @@ import Button from '../../../shared/components/Button'
 import { Star } from 'lucide-react'
 
 const ProductDetails = ( { product, addToCart }) => {
-    console.log("product details",product);
+
   return (
+
     <div className=" shadow-2xs rounded-[20px] mt-10 p-8 flex items-center bg-white gap-10">
-        <div className=' bg-gray-100 rounded-2xl'>
-            <img src={product.images && product.images[0]} alt={product.title} className='object-contain w-150 h-100' loading='lazy'/>
+        {/* Product Image */}
+        <div className=' bg-gray-100 rounded-2xl w-150 '>
+            <img src={product.images && product.images[0]} alt={product.title} className='object-contain h-100' loading='lazy'/>
         </div>
-        
-        <div className='flex flex-col w-full'>
+        {/* Product Details */}
+        <div className='flex flex-col w-full h-100'>
             <span className='font-semibold text-5xl pb-4 shadow-2xs'>{product.title}</span>
             <p className='pt-4'>{product.description}</p>
 
@@ -31,12 +33,16 @@ const ProductDetails = ( { product, addToCart }) => {
                 </div>
             </div>
             
-            <div className='flex flex-row items-center-safe justify-end gap-5 pt-15 w-full'>
+            {/* Button Container */}
+            <div className='flex flex-row items-center justify-end gap-5 pt-15 w-full'>
                 <Button variant={'success'} onClick={()=>addToCart(product)}> Add to Cart </Button>
                 <Button onClick={() => window.history.back()} variant={'outline'}> Back </Button>
             </div>
+
+            
+
         </div>
-        
+    
     </div>
   )
 }
