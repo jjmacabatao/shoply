@@ -6,6 +6,7 @@ import { ShoppingCart, User2 } from "lucide-react";
 
 const NavBar = ( {title, subTitle}) => {
   const { cartSize } = UseCartContext();
+  
   return (
     <nav className="flex flex-row justify-between sticky top-0 bg-white z-10 border-b">
       <div className='h-26 flex flex-col justify-center-safe px-10 pb-2 text-green-600'>

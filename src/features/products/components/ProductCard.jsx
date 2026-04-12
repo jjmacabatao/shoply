@@ -20,7 +20,7 @@ import { Link } from 'react-router-dom';
 const ProductCardDetails = ({title, price, rating}) => {
   return (
     <>
-      <div className="p-4 flex flex-col gap-2">
+      <div className="p-4 flex flex-col gap-2 max-w-7xl mx-auto">
 
         <h3 className="text-gray-800 font-semibold text-sm line-clamp-2">
           {title}
@@ -54,7 +54,7 @@ const ProductCardDetails = ({title, price, rating}) => {
 const ProductCard = ({cardFor, product, addToFavorite, isInFavorite, addToCart, removeFromCart}) => {
   // console.log(inFavorite);
   return (
-    <div className="bg-white border border-gray-300 rounded-2xl shadow hover:shadow-2xl transition-all duration-300 overflow-hidden group px-4 py-2">
+    <div className="bg-white border border-gray-300 rounded-2xl shadow hover:shadow-2xl transition-all duration-300 overflow-hidden group px-4 py-6">
 
       {/* <ProductCardImage id={product.id} thumbnail={product.thumbnail} title={product.title} addToFavorite={addToFavorite}/> */}
       {/* Card Image */}
@@ -67,7 +67,33 @@ const ProductCard = ({cardFor, product, addToFavorite, isInFavorite, addToCart, 
       </div>
 
       {/* Card Details */}
-      <ProductCardDetails title={product.title} price={product.price} rating={product.rating}/>
+      {/* <ProductCardDetails title={product.title} price={product.price} rating={product.rating}/> */}
+       <div className="p-4 flex flex-col gap-2">
+
+        <h3 className="text-gray-800 font-semibold text-sm line-clamp-2">
+          {product.title}
+        </h3>
+
+        <div className="flex items-center gap-2">
+          <span className="text-lg font-bold text-gray-800">
+            ${product.price}
+          </span>
+        </div>
+      </div>
+
+      <div className="flex items-center gap-1 px-3">
+        {[...Array(5)].map((_, i) => (
+          <Star
+            key={i}
+            size={18}
+            className={
+              i < product.rating
+                ? "fill-[#FACC15] text-[#FACC15]"
+                : "text-gray-300"
+            }
+          />
+        ))}<span className='text-[12px]'>( {product.rating} )</span>
+      </div>
 
       {/* Button wrapper */}
       <div className='flex flex-row justify-end gap-2 pt-4 pb-2'>

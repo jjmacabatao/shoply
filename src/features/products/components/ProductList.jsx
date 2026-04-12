@@ -17,7 +17,7 @@ const ProductList = () => {
         { productCount > 0 ? <span>{productCount} Product(s) Found!</span> : <span>No Product Found!</span>}
       </div>
 
-      <div className='grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 3xl:grid-cols-5'>
+      <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 3xl:grid-cols-5'>
         {
           
           products.map((product) => (
