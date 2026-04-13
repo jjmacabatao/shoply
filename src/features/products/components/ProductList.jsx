@@ -10,10 +10,6 @@ const ProductList = () => {
   const { addToCart } = useCart();
   const productCount = products.length;
 
-  if (!products) {
-    return <p> Loading</p>
-  }
-
   return (
     <>
       {
@@ -41,7 +37,6 @@ const ProductList = () => {
                 <ProductCard 
                   key = {product.id} 
                   product = {product}
-                  cardFor={'products'}
                   addToCart = {addToCart}
                   addToFavorite = {handleOnclickAddToFavorite}
                   isInFavorite = {favorite.includes(product.id)}

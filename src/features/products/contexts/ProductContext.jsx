@@ -1,6 +1,7 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetchProducts } from "../services/productService";
 import { getObjectLocalStorageData, getStringLocalStorageData, setLocalStorage } from "../../../utils/localStorage";
+import { toast } from "sonner";
 
 const ProductContext = createContext();
 
@@ -55,6 +56,7 @@ export const ProductProvider = ( {children} ) => {
         setFavorite((prev) =>
         prev.includes(id) ? prev.filter((item) => item !== id) : [...prev, id],
         );
+        toast.success(`Successfully ${favorite.includes(id) ? 'removed from' : 'added to'} favorites.`);
     };
 
     const value = {

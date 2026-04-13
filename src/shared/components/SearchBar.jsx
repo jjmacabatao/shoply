@@ -2,11 +2,11 @@ import React from 'react'
 import { useProduct } from '../../features/products/contexts/ProductContext';
 import DropDown from './DropDown';
 
-const SearchBar = ({placeholder}) => {
+const SearchBar = ({ placeholder, hidden }) => {
   const { setSearchKeyword,searchKeyword, productCategories, selectedCategory, setSelectedCategory } = useProduct();
   
   return (
-    <section className='flex flex-row justify-end-safe gap-2 items-center w-250'>
+    <section className={`flex flex-row justify-end-safe gap-2 items-center w-250 ${ hidden && 'hidden'}`}>
         <div className='flex flex-row gap-2'>
           <input 
             onChange={(e) => setSearchKeyword(e.target.value)} 

@@ -51,7 +51,7 @@ const ProductCardDetails = ({title, price, rating}) => {
 }
 
 
-const ProductCard = ({cardFor, product, addToFavorite, isInFavorite, addToCart, removeFromCart}) => {
+const ProductCard = ({ product, addToFavorite, isInFavorite, addToCart, removeFromCart}) => {
   // console.log(inFavorite);
   return (
     <div className="bg-white border border-gray-300 rounded-2xl shadow hover:shadow-2xl transition-all duration-300 overflow-hidden group px-4 py-6">
@@ -103,15 +103,9 @@ const ProductCard = ({cardFor, product, addToFavorite, isInFavorite, addToCart, 
           </Link>
         </Button>
         
-        {
-          cardFor === 'products' ? 
-            <Button onClick={() =>  addToCart(product)} variant={'success'}>
-              Add to Cart
-            </Button> :
-            <Button onClick={() =>  removeFromCart(product)} variant={'success'}>
-              Remove from Cart
-            </Button>
-        }
+        <Button onClick={() =>  addToCart(product)} variant={'success'}>
+          Add to Cart
+        </Button>
         
       </div>
     </div>
