@@ -1,16 +1,48 @@
 # 🛒 Shoply - an E-Commerce React App
 
-A feature-based **e-commerce web application** built with React. This project used to be the first project of y ReDI Full-Stack Bootcamp.
+A feature-based **e-commerce web application** built with React. This project used to be the first project of my ReDI Full-Stack Bootcamp.
 
 ---
 
 ## 🚀 Features
 
--
+- Product listing with dynamic filtering and search
+- Shopping cart management
+- Product details page
+- Add products to favorite
+- State management using Context API / custom hooks
+- Notification
+- Local storage
 
 ---
 
 ## 🏗️ Project Structure
+
+```
+src/
+│
+├── assets/
+├── features/
+│   ├── products/
+│   │   ├── components/
+│   │   ├── context/
+│   │   └── services/
+│   │
+│   ├── cart/
+│   │   ├── components/
+│   │   └── context/
+│
+├── pages/
+├── layouts/
+├── routes/
+├── shared/
+|   ├── components/
+|   ├── styles/
+├── utils/
+├── App.jsx
+├── index.css
+└── main.jsx
+```
 
 ---
 
@@ -18,10 +50,11 @@ A feature-based **e-commerce web application** built with React. This project us
 
 - React (Vite)
 - JavaScript (ES6+)
-- Tailwind CSS / CSS Modules
+- Tailwind CSS
 - React Router
 - Context API & Custom Hooks
 - Fetch API
+- Sonner
 
 ---
 
@@ -33,12 +66,6 @@ cd shoply
 npm install
 npm run dev
 ```
-
----
-
-## 🧠 Architecture Overview
-
--
 
 ---
 
@@ -55,9 +82,7 @@ npm run lint
 
 ## 🚀 Deployment
 
--
-
----
+- ***
 
 ## 👨‍💻 Author
 
