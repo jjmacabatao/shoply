@@ -1,13 +1,14 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { fetchProducts } from "../services/productService";
+import { getObjectLocalStorageData, getStringLocalStorageData, setLocalStorage } from "../../../utils/localStorage";
 
 const ProductContext = createContext();
 
 export const ProductProvider = ( {children} ) => {
-    const [searchKeyword, setSearchKeyword] = useState(""); // search keyword state
+    const [searchKeyword, setSearchKeyword] = useState(()=>getStringLocalStorageData("searchProductKeyword")); // search keyword state
     const [products, setProduct] = useState([]); // products state
-    const [favorite, setFavorite] = useState([]); // favorite products state
-    const [selectedCategory, setSelectedCategory] = useState(""); // selected category state (for filtering products)
+    const [favorite, setFavorite] = useState(() => getObjectLocalStorageData("favoriteProducts")); // favorite products state
+    const [selectedCategory, setSelectedCategory] = useState(()=>getStringLocalStorageData("selectedProductCategory")); // selected category state (for filtering products)
     const [loading, setLoading] = useState(true);
     
     useEffect(() => {
@@ -22,8 +23,17 @@ export const ProductProvider = ( {children} ) => {
     }, []);
 
     useEffect(() => {
-        console.log(selectedCategory);
+        setLocalStorage("selectedProductCategory",selectedCategory);
     }, [selectedCategory]);
+
+    useEffect(() => {
+        setLocalStorage("favoriteProducts",favorite);
+    }, [favorite]);
+
+    useEffect(() => {
+        setLocalStorage("searchProductKeyword",searchKeyword);
+    }, [searchKeyword]);
+    
 
     const filteredProducts = products.filter((product) => {
         // condition based on the search keyword
@@ -55,6 +65,7 @@ export const ProductProvider = ( {children} ) => {
         favorite,
         productCategories: filteredProductsCategories,
         setSelectedCategory,
+        selectedCategory,
         loading,
         setLoading,
     }

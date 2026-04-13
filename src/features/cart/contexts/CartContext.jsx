@@ -1,14 +1,17 @@
 import { createContext, useContext, useEffect, useState } from "react";
 import { toast } from "sonner";
+import { getObjectLocalStorageData, setLocalStorage } from "../../../utils/localStorage";
 
 const CartContext = createContext();
 
 export const CartProvider = ({children}) => {
-    const [cartProducts, setCartProducts] = useState([]);
+    const [cartProducts, setCartProducts] = useState(() => getObjectLocalStorageData('cartProducts'));
     const [cartSize, setCartSize] = useState(0);
+
 
     useEffect(() => {
         setCartSize(cartProducts.length);
+        setLocalStorage('cartProducts',cartProducts);
     }, [cartProducts]);
 
 
@@ -35,6 +38,7 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (product) => {
         console.log("add to cart is called");
+        console.log(cartProducts)
         const inCart = cartProducts.find((item) => item.item.id === product.id);
         if (inCart) {
             setCartProducts(updateCartProductQuantity(product.id,'increment'));
