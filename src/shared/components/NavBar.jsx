@@ -11,7 +11,7 @@ const NavBar = ( {title, subTitle}) => {
   const { favorite } = useProduct();
   const location = useLocation();
   return (
-    <nav className="flex flex-row justify-between sticky top-0 bg-white z-10 border-b">
+    <nav className="flex flex-row justify-between sticky top-0 bg-white z-10 border-b tracking-wide">
       <div className='h-26 flex flex-col justify-center-safe px-10 pb-2 text-green-600'>
         <Link to="/">
           <span className="text-7xl font-bold">{title}</span>

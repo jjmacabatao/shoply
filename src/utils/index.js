@@ -11,3 +11,9 @@ export const computeCartTotalPrice = (products) => {
 
   return totalPrice.toFixed(2);
 };
+
+export const totalRatings = (reviews) => {
+  return (
+    reviews.reduce((total, item) => total + item.rating, 0) / reviews.length
+  );
+};

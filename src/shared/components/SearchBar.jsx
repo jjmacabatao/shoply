@@ -6,7 +6,7 @@ const SearchBar = ({ placeholder, hidden }) => {
   const { setSearchKeyword,searchKeyword, productCategories, selectedCategory, setSelectedCategory } = useProduct();
   
   return (
-    <section className={`flex flex-row justify-end-safe gap-2 items-center w-250 ${ hidden && 'hidden'}`}>
+    <section className={`flex flex-row justify-end-safe gap-2 items-center w-250 ${ hidden && 'hidden'} sm:150`}>
         <div className='flex flex-row gap-2'>
           <input 
             onChange={(e) => setSearchKeyword(e.target.value)} 

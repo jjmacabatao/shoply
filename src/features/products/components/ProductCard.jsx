@@ -2,6 +2,7 @@ import React from 'react'
 import { Star, Heart} from "lucide-react";
 import Button from '../../../shared/components/Button';
 import { Link } from 'react-router-dom';
+import Ratings from '../../../shared/components/Ratings';
 
 
 // const ProductCardImage = ({id, thumbnail, title, addToFavorite}) => {
@@ -51,8 +52,8 @@ const ProductCardDetails = ({title, price, rating}) => {
 }
 
 
-const ProductCard = ({ product, addToFavorite, isInFavorite, addToCart, removeFromCart}) => {
-  // console.log(inFavorite);
+const ProductCard = ({ product, addToFavorite, isInFavorite, addToCart }) => {
+
   return (
     <div className="bg-white border border-gray-300 rounded-2xl shadow hover:shadow-2xl transition-all duration-300 overflow-hidden group px-4 py-6">
 
@@ -81,19 +82,7 @@ const ProductCard = ({ product, addToFavorite, isInFavorite, addToCart, removeFr
         </div>
       </div>
 
-      <div className="flex items-center gap-1 px-3">
-        {[...Array(5)].map((_, i) => (
-          <Star
-            key={i}
-            size={18}
-            className={
-              i < product.rating
-                ? "fill-[#FACC15] text-[#FACC15]"
-                : "text-gray-300"
-            }
-          />
-        ))}<span className='text-[12px]'>( {product.rating} )</span>
-      </div>
+      <Ratings rating={ product.rating } />
 
       {/* Button wrapper */}
       <div className='flex flex-row justify-end gap-2 pt-4 pb-2'>
