@@ -50,14 +50,14 @@ export const CartProvider = ({children}) => {
         }
     };
 
-    const removeFromCart = (product) => {
+    const removeFromCart = (product, allItem = false) => {
         console.log("remove from cart is called");
         // TODO:
         // find the product from the cart and check its quantity
         // if quantity > 1 then decrease value by 1 otherwise remove from the array.
         const cartData = cartProducts.find((item) => item.item === product);
-        
-        if (cartData.quantity > 1) {
+        const quantity = allItem ? 1 : cartData.quantity;
+        if (quantity > 1) {
             // decrease it quantity by 1
             setCartProducts(updateCartProductQuantity(product.id,'decrement'));
             toast.success(`${product.title} was successfully removed from the cart.`);
@@ -84,6 +84,7 @@ export const CartProvider = ({children}) => {
         removeFromCart,
         setCartProducts,
         clearCart,
+        updateCartProductQuantity,
     }
 
     return (

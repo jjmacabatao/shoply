@@ -7,7 +7,7 @@ import Button from '../../../shared/components/Button';
 import { toast } from 'sonner';
 
 const CartList = () => {
-  const { cartProducts, cartSize, removeFromCart, clearCart } = useCart();
+  const { cartProducts, cartSize, removeFromCart, clearCart, updateCartProductQuantity } = useCart();
   
   return (
     <section className='bg-[#F3F4F6] px-10 py-1'>
@@ -27,7 +27,6 @@ const CartList = () => {
               <CartCard 
                 key={product.item.id}
                 product={product}
-                removeFromCart={removeFromCart}
               />
             ))
           }
