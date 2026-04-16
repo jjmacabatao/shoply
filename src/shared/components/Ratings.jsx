@@ -8,6 +8,7 @@ const Ratings = ( {rating, starSize, textSize} ) => {
             <Star
             key={i}
             size={starSize}
+            strokeWidth={1.7}
             className={
                 i < rating.toFixed(0)
                 ? "fill-[#FACC15] text-[#FACC15]"

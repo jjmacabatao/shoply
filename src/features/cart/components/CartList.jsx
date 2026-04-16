@@ -5,9 +5,10 @@ import CartCard from './CartCard';
 import { computeCartTotalPrice } from '../../../utils';
 import Button from '../../../shared/components/Button';
 import { toast } from 'sonner';
+import { CreditCard, Trash2 } from 'lucide-react';
 
 const CartList = () => {
-  const { cartProducts, cartSize, removeFromCart, clearCart, updateCartProductQuantity } = useCart();
+  const { cartProducts, cartSize, clearCart } = useCart();
   
   return (
     <section className='bg-[#F3F4F6] px-10 py-1'>
@@ -30,13 +31,21 @@ const CartList = () => {
               />
             ))
           }
-          <div className='bg-white p-4 flex flex-row justify-between items-center'>
+          <div className='bg-white p-4 flex flex-row justify-between items-center rounded-md'>
             <div className='text-2xl font-semibold'>
               Total : <span className='text-green-600 font-bold'>${computeCartTotalPrice(cartProducts)}</span>
             </div>
             <div className='flex flex-row justify-end gap-2'>
-              <Button variant={'primary'} onClick={() => toast.error("Function is currently not available.")} disabled={cartSize === 0}>Pay</Button>
-              <Button variant={'danger'} onClick={clearCart} disabled={cartSize === 0}>Clear Cart</Button>
+              <Button variant={'primary'} onClick={() => toast.error("Function is currently not available.")} disabled={cartSize === 0}>
+                <div className='flex gap-1'>
+                    <CreditCard strokeWidth={1.5} /> Pay
+                </div>
+              </Button>
+              <Button variant={'danger'} onClick={clearCart} disabled={cartSize === 0}>
+                 <div className='flex gap-1'>
+                    <Trash2 strokeWidth={1.5} /> Clear Cart
+                </div>
+              </Button>
             </div>
             
           </div>

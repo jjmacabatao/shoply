@@ -4,6 +4,7 @@ import { toast } from 'sonner'
 import ReviewCard from './ReviewCard'
 import Ratings from '../../../shared/components/Ratings'
 import { totalRatings } from '../../../utils'
+import { PencilLine } from 'lucide-react'
 
 const ReviewList = ( { reviews } ) => {
 
@@ -14,7 +15,11 @@ const ReviewList = ( { reviews } ) => {
             <span className='col-start-1 col-end-4 text-3xl'>
                 <Ratings rating={totalRatings(reviews)} starSize={25} textSize={30}/>
             </span>
-            <Button variant={'success'} onClick={()=> toast.info("Function is currently not available.")}>Write Review</Button>
+            <Button variant={'success'} onClick={()=> toast.info("Function is currently not available.")}>
+                <div className='flex gap-2 justify-center'>
+                    <PencilLine strokeWidth={1.5} /> Write Review
+                </div>
+            </Button>
         </div>
             {
                 reviews.map((review, i) => ( 
