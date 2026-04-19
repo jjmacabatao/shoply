@@ -51,27 +51,27 @@ export const card = {
 // Tailwind CSS color/style variants for buttons, badges, alerts, etc.
 export const variants = {
   primary:
-    "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "bg-blue-600 text-white hover:bg-blue-700 focus:ring-blue-500 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
   secondary:
-    "bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-400 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "bg-gray-200 text-gray-900 hover:bg-gray-300 focus:ring-gray-400 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
   success:
-    "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "bg-green-600 text-white hover:bg-green-700 focus:ring-green-500 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
   danger:
-    "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "bg-red-600 text-white hover:bg-red-700 focus:ring-red-500 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
   warning:
-    "bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-400 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
-  info: "bg-sky-500 text-white hover:bg-sky-600 focus:ring-sky-400 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "bg-yellow-500 text-white hover:bg-yellow-600 focus:ring-yellow-400 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
+  info: "bg-sky-500 text-white hover:bg-sky-600 focus:ring-sky-400 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
   ghost:
-    "bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-300 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-none cursor-pointer",
+    "bg-transparent text-gray-700 hover:bg-gray-100 focus:ring-gray-300 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-none cursor-pointer active:scale-95 transition-transform hover:scale-102",
   outline:
-    "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-300 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "border border-gray-300 text-gray-700 hover:bg-gray-50 focus:ring-gray-300 rounded-lg px-4 py-2 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
   addToCart:
-    "bg-orange-400 text-white hover:bg-orange-600 hover:text-black focus:ring-orange-400 rounded-lg px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-md cursor-pointer",
+    "bg-orange-400 text-white hover:bg-orange-600 hover:text-black focus:ring-orange-400 rounded-lg px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-md cursor-pointer active:scale-95 transition-transform hover:scale-102",
   viewDetails:
-    "bg-white text-sky-600 border border-sky-500 hover:bg-sky-50 focus:ring-sky-400 rounded-lg px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer",
+    "bg-white text-sky-600 border border-sky-500 hover:bg-sky-50 focus:ring-sky-400 rounded-lg px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-sm cursor-pointer active:scale-95 transition-transform hover:scale-102",
 
   removeFromCart:
-    "bg-red-500 text-white hover:bg-red-600 hover:text-black focus:ring-red-400 rounded-lg px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-md cursor-pointer",
+    "bg-red-500 text-white hover:bg-red-600 hover:text-black focus:ring-red-400 rounded-lg px-2 py-1 sm:px-2 sm:py-1 text-sm sm:text-base transition-colors duration-200 ease-in-out shadow-md cursor-pointer active:scale-95 transition-transform hover:scale-102",
 };
 
 // Sizes usable across components (buttons, inputs, badges, etc.)

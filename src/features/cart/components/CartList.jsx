@@ -31,24 +31,28 @@ const CartList = () => {
               />
             ))
           }
-          <div className='bg-white p-4 flex flex-row justify-between items-center rounded-md'>
-            <div className='text-2xl font-semibold'>
-              Total : <span className='text-green-600 font-bold'>${computeCartTotalPrice(cartProducts)}</span>
-            </div>
-            <div className='flex flex-row justify-end gap-2'>
-              <Button variant={'primary'} onClick={() => toast.error("Function is currently not available.")} disabled={cartSize === 0}>
-                <div className='flex gap-1'>
-                    <CreditCard strokeWidth={1.5} /> Pay
+          {
+            cartSize > 0 && 
+              <div className='bg-white p-4 flex flex-row justify-between items-center rounded-md'>
+                <div className='text-2xl font-semibold'>
+                  Total : <span className='text-green-600 font-bold'>${computeCartTotalPrice(cartProducts)}</span>
                 </div>
-              </Button>
-              <Button variant={'danger'} onClick={clearCart} disabled={cartSize === 0}>
-                 <div className='flex gap-1'>
-                    <Trash2 strokeWidth={1.5} /> Clear Cart
+                <div className='flex flex-row justify-end gap-2'>
+                  <Button variant={'primary'} onClick={() => toast.error("Function is currently not available.")} disabled={cartSize === 0}>
+                    <div className='flex gap-1'>
+                        <CreditCard strokeWidth={1.5} /> Pay
+                    </div>
+                  </Button>
+                  <Button variant={'danger'} onClick={clearCart} disabled={cartSize === 0}>
+                    <div className='flex gap-1'>
+                        <Trash2 strokeWidth={1.5} /> Clear Cart
+                    </div>
+                  </Button>
                 </div>
-              </Button>
-            </div>
-            
-          </div>
+                
+              </div>
+          }
+          
         </div>
         
         

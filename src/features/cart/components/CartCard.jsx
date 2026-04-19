@@ -27,7 +27,7 @@ const CartCard = ( {product} ) => {
         {/* Button wrapper */}
         <div className='flex flex-row items-center justify-end gap-3 '>
             <QuantityButton quantity={product.quantity} onClickIncrease={() =>  addToCart(product.item)} onClickDecrease={() =>  removeFromCart(product.item)}/>
-            <Trash2 strokeWidth={1} onClick={() =>  removeFromCart(product.item,true)} className='cursor-pointer text-[#6B7280] hover:text-red-600' size={25}/>
+            <Trash2 strokeWidth={1} onClick={() =>  removeFromCart(product.item,true)} className='cursor-pointer text-[#6B7280] hover:text-red-600 transition-transform hover:scale-110 active:scale-95' size={25}/>
             {/* <Button onClick={() =>  removeFromCart(product.item)} variant={'danger'}>
                 <Trash2 />
             </Button> */}

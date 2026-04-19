@@ -4,7 +4,7 @@ import Button from './Button'
 
 const Footer = ( ) => {
   return (
-    <footer className='flex flex-col mt-50 p-8 border-t border-[#E5E7EB] shadow-sm'>
+    <footer className='flex flex-col mt-50 p-8 border-t border-[#E5E7EB]'>
         <section className='grid grid-cols-12 '>
             <section className='col-start-1 col-end-5 flex flex-col pl-8 pt-5'>
                 <div className='flex flex-col gap-2'>
@@ -46,7 +46,7 @@ const Footer = ( ) => {
                 </section>
             </section>
         </section>
-        <section className='flex flex-row justify-center border-t mt-8 pt-8 border-[#E5E7EB]'>
+        <section className='flex flex-row justify-center border-t mt-8 pt-8 border-t-[#E5E7EB]'>
             <section>
                 2026 Shoply. All rights reserved.
             </section>

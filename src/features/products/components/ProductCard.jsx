@@ -60,7 +60,7 @@ const ProductCard = ({ product, addToFavorite, isInFavorite, addToCart }) => {
       {/* <ProductCardImage id={product.id} thumbnail={product.thumbnail} title={product.title} addToFavorite={addToFavorite}/> */}
       {/* Card Image */}
       <div className="relative flex items-center justify-center h-68 p-4">
-        <button className="absolute -top-2 right-0 p-2 hover:scale-120 transition">
+        <button className="absolute -top-2 right-0 p-2 hover:scale-120 active:scale-95 transition">
           <Heart size={33} strokeWidth={1} className={`text-gray-500 ${isInFavorite && 'fill-red-600 text-red-600'}`} onClick={()=>addToFavorite(product.id)}/>
         </button>
 
@@ -88,7 +88,7 @@ const ProductCard = ({ product, addToFavorite, isInFavorite, addToCart }) => {
       
 
       {/* Button wrapper */}
-      <div className='flex flex-row justify-end gap-3 pt-8 pb-2'>
+      <div className='flex flex-row justify-center gap-4 pt-8 pb-2'>
         <Button variant={'viewDetails'}>
           <Link to={`/products/${product.id}`}>
             <div className='flex gap-1'>
