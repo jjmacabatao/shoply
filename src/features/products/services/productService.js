@@ -1,5 +1,5 @@
 const fetchProducts = async () => {
-  const response = await fetch("https://dummyjson.com/products?limit=50");
+  const response = await fetch("https://dummyjson.com/products");
 
   if (!response.ok) {
     throw new Error("Something went wrong. Failed to fetch the products.");
