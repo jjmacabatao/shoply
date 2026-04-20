@@ -10,25 +10,23 @@ const ProductDetailsPage = () => {
     const {id} = useParams();
     const [product, setProduct] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
     
 
     useEffect(() => {
         fetchProduct(id)
           .then(setProduct)
           .catch((res) => {
-            console.error(res);
+            setError(res)
             setLoading(false);
           }).finally(()=> setLoading(false));
     },[id]);
 
   return (
     <MainLayout>
-        {
-          loading ? 
-            <PageNotification>Loading product details. . . .</PageNotification> 
-          : 
-            <ProductDetails product={product}/> 
-        }
+        {loading &&  <PageNotification>Loading product details. . . .</PageNotification> }
+        {error && <PageNotification>{`${error}`}</PageNotification> }
+        { (!loading && !error) && <ProductDetails product={product}/> }
     </MainLayout>
   )
 }

@@ -11,12 +11,14 @@ export const ProductProvider = ( {children} ) => {
     const [favorite, setFavorite] = useState(() => getObjectLocalStorageData("favoriteProducts")); // favorite products state
     const [selectedCategory, setSelectedCategory] = useState(()=>getStringLocalStorageData("selectedProductCategory")); // selected category state (for filtering products)
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState('');
     
     useEffect(() => {
+        
         fetchProducts()
             .then(setProduct)
             .catch((res) => {
-                console.error(res);
+                setError(res);
                 setLoading(false);
             })
             .finally(() => setLoading(false));
@@ -70,6 +72,7 @@ export const ProductProvider = ( {children} ) => {
         selectedCategory,
         loading,
         setLoading,
+        error,
     }
 
 
