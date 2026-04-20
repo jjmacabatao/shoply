@@ -9,28 +9,31 @@ A feature-based **e-commerce web application** built with React. This project us
 - Product listing with dynamic filtering and search
 - Shopping cart management
 - Product details page
-- Add products to favorite
+- Add/Remove products from favorite
 - State management using Context API / custom hooks
 - Notification
 - Local storage
+- Responsive UI
 
 ---
 
 ## 🏗️ Project Structure
 
 ```
+public/
+│
 src/
 │
 ├── assets/
 ├── features/
 │   ├── products/
 │   │   ├── components/
-│   │   ├── context/
+│   │   ├── contexts/
 │   │   └── services/
 │   │
 │   ├── cart/
 │   │   ├── components/
-│   │   └── context/
+│   │   └── contexts/
 │
 ├── pages/
 ├── layouts/
@@ -82,7 +85,9 @@ npm run lint
 
 ## 🚀 Deployment
 
-- ***
+- Vercel ( see: https://shoply-sigma.vercel.app )
+
+---
 
 ## 👨‍💻 Author
 

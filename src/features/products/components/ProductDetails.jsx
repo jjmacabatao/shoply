@@ -1,17 +1,24 @@
 import React from 'react'
 import Button from '../../../shared/components/Button'
-import { ArrowLeft, ShoppingCart, Star } from 'lucide-react'
+import { ArrowLeft, Heart, ShoppingCart, Star } from 'lucide-react'
 import ReviewList from './ReviewList'
 import Ratings from '../../../shared/components/Ratings'
+import { useCart } from '../../cart/contexts/CartContext'
+import { useProduct } from '../contexts/ProductContext'
 
-const ProductDetails = ( { product, addToCart }) => {
-
+const ProductDetails = ( { product }) => {
+    const { handleOnclickAddToFavorite, favorite } = useProduct();
+    const { addToCart } = useCart();
+    
   return (
 
     <div className=" shadow-2xs rounded-[20px] mt-10 p-8 flex flex-col items-center bg-white gap-10 overflow-hidden">
         <div className='flex flex-col lg:flex-row md:flex-row items-center md:items-start bg-white gap-10 sm:gap-5  '>
             {/* Product Image */}
-            <div className=' bg-gray-100 rounded-2xl'>
+            <div className='relative bg-gray-100 rounded-2xl'>
+                <button className="absolute top-2 right-2 p-2 hover:scale-120 active:scale-95 transition">
+                    <Heart size={35} strokeWidth={1} className={`text-gray-500 ${favorite.includes(product.id) && 'fill-red-600 text-red-600'}`} onClick={()=>handleOnclickAddToFavorite(product.id)}/>
+                </button>
                 <img src={product.images && product.images[0]} alt={product.title} className='object-contain w-150 sm:m-auto' loading='lazy'/>
             </div>
             {/* Product Details */}

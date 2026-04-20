@@ -3,6 +3,7 @@ import Button from '../../../shared/components/Button'
 import QuantityButton from '../../../shared/components/QuantityButton'
 import { useCart } from '../contexts/CartContext'
 import { Trash2 } from 'lucide-react'
+import { Link } from 'react-router-dom'
 
 const CartCard = ( {product} ) => {
     const { removeFromCart, addToCart } = useCart();
@@ -13,9 +14,10 @@ const CartCard = ( {product} ) => {
         </div>
 
         <div className="p-4 flex flex-col gap-2 w-[70%]">
-            <h3 className="text-gray-800 font-semibold text-md">
+
+            <Link to={`/products/${product.item.id}`} className="text-gray-800 font-semibold text-md hover:underline hover:text-green-600">
                 {product.item.title} ( {product.quantity}x )
-            </h3>
+            </Link>
 
             <div className="flex items-center gap-2">
                 <span className="text-lg font-bold text-gray-800">
@@ -28,9 +30,6 @@ const CartCard = ( {product} ) => {
         <div className='flex flex-row items-center justify-end gap-3 '>
             <QuantityButton quantity={product.quantity} onClickIncrease={() =>  addToCart(product.item)} onClickDecrease={() =>  removeFromCart(product.item)}/>
             <Trash2 strokeWidth={1} onClick={() =>  removeFromCart(product.item,true)} className='cursor-pointer text-[#6B7280] hover:text-red-600 transition-transform hover:scale-110 active:scale-95' size={25}/>
-            {/* <Button onClick={() =>  removeFromCart(product.item)} variant={'danger'}>
-                <Trash2 />
-            </Button> */}
         </div>
 
     </article>

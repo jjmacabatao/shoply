@@ -29,7 +29,7 @@ const NavBar = ( {title, subTitle}) => {
       
       </div>
 
-      <SearchBar placeholder={"Search . . ."} hidden={(location.pathname !== '/' && location.pathname !=='/products') && true }/>
+      <SearchBar placeholder={"Search . . ."} hidden={(location.pathname !== '/' && location.pathname !=='/products' && location.pathname !== '/favorites')  && true }/>
       <div className='hidden lg:flex items-center align-middle gap-2 px-10 pb-2 text-[#6B7280] relative h-26'>
         <Link to="/products" className={`p-1.5 m-auto transition-transform hover:scale-110 active:scale-95 ${(location.pathname === '/' || location.pathname ==='/products') && 'text-green-600'}`}>
           <Store size={35} strokeWidth={1} className='cursor-pointer'/>

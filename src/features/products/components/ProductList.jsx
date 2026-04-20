@@ -1,13 +1,12 @@
 import React from 'react'
 import ProductCard from './ProductCard'
 import { useProduct } from '../contexts/ProductContext';
-import { useCart } from '../../cart/contexts/CartContext';
 import PageNotification from '../../../shared/components/PageNotification';
+import { capitalizedFirstLetter } from '../../../utils';
 
 const ProductList = () => {
   
-  const { products, handleOnclickAddToFavorite, favorite, loading } = useProduct();
-  const { addToCart } = useCart();
+  const { products, loading, selectedCategory } = useProduct();
   const productCount = products.length;
 
   return (
@@ -26,7 +25,9 @@ const ProductList = () => {
                 ? 
                   <span>{productCount} product(s) found!</span> 
                 : 
-                  <PageNotification>No products found!</PageNotification>
+                  <PageNotification>
+                    {`No products found in the "${capitalizedFirstLetter(selectedCategory) || 'All Products'}" category with the given keyword.`}
+                  </PageNotification>
               }
           </div>
 
@@ -37,9 +38,6 @@ const ProductList = () => {
                 <ProductCard 
                   key = {product.id} 
                   product = {product}
-                  addToCart = {addToCart}
-                  addToFavorite = {handleOnclickAddToFavorite}
-                  isInFavorite = {favorite.includes(product.id)}
                 />
               ))
             }

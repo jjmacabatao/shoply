@@ -21,7 +21,6 @@ const CartList = () => {
                 }   
             </div>
 
-        {/* <div className='grid grid-cols-1 gap-10 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 2xl:grid-cols-4 3xl:grid-cols-5'> */}
         <div className='flex flex-col gap-2'>
           {
             cartProducts.map((product) => (
@@ -38,7 +37,7 @@ const CartList = () => {
                   Total : <span className='text-green-600 font-bold'>${computeCartTotalPrice(cartProducts)}</span>
                 </div>
                 <div className='flex flex-row justify-end gap-2'>
-                  <Button variant={'primary'} onClick={() => toast.error("Function is currently not available.")} disabled={cartSize === 0}>
+                  <Button variant={'success'} onClick={() => toast.error("Function is currently not available.")} disabled={cartSize === 0}>
                     <div className='flex gap-1'>
                         <CreditCard strokeWidth={1.5} /> Pay
                     </div>

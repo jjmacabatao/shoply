@@ -17,3 +17,10 @@ export const totalRatings = (reviews) => {
     reviews.reduce((total, item) => total + item.rating, 0) / reviews.length
   );
 };
+
+export const favoriteInProducts = (products, favorite) => {
+  const filteredProducts = products.filter(
+    (product) => favorite.includes(product.id) && product,
+  );
+  return filteredProducts.length;
+};
