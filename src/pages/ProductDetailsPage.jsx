@@ -4,6 +4,7 @@ import { fetchProduct } from '../features/products/services/productService';
 import ProductDetails from '../features/products/components/ProductDetails';
 import MainLayout from '../layouts/MainLayout';
 import PageNotification from '../shared/components/PageNotification';
+import { BounceLoader } from 'react-spinners';
 
 const ProductDetailsPage = () => {
 
@@ -17,15 +18,14 @@ const ProductDetailsPage = () => {
         fetchProduct(id)
           .then(setProduct)
           .catch((res) => {
-            setError(res)
-            setLoading(false);
+            setError(res.message);
           }).finally(()=> setLoading(false));
     },[id]);
 
   return (
     <MainLayout>
-        {loading &&  <PageNotification>Loading product details. . . .</PageNotification> }
-        {error && <PageNotification>{`${error}`}</PageNotification> }
+        { loading && <BounceLoader className="m-auto mt-50 opacity-50" color="#99a1af" speedMultiplier={1.2}/> }
+        {error && <PageNotification>{error}</PageNotification> }
         { (!loading && !error) && <ProductDetails product={product}/> }
     </MainLayout>
   )

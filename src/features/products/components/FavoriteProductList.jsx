@@ -9,11 +9,13 @@ const FavoriteProductList = () => {
     const countOfFavoriteInProducts = favoriteInProducts(products, favorite);
   return (
     <section className='bg-[#F3F4F6] px-10 py-1'>
-        <div className='px-1 text-2xl text-gray-700 mt-2 pb-2' >
+        <div className='mt-13 mb-2' >
         { 
             countOfFavoriteInProducts > 0 
             ? 
-                <span>{countOfFavoriteInProducts} product(s) found!</span> 
+                <span className='text-gray-700 text-xl'>
+                  <strong>{countOfFavoriteInProducts}</strong> product(s) found!
+                </span> 
             : 
                 <PageNotification>
                   {
@@ -23,7 +25,7 @@ const FavoriteProductList = () => {
             }
         </div>
 
-        <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 2xl:grid-cols-3 3xl:grid-cols-3'>
+        <div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3'>
         {
           products.map((product) => {
             return (

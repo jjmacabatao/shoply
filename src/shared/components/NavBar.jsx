@@ -16,13 +16,13 @@ const NavBar = ( {title, subTitle}) => {
 
   return (
     <nav className="flex flex-row justify-between sticky top-0 bg-white/90 z-10 shadow-md backdrop-blur-sm">
-      <div className='hidden flex-col h-26 justify-center-safe px-10 pb-2 text-[#16A34A] md:pr-5 sm:pr-5 2xl:flex xl:flex lg:flex md:flex'>
+      <div className='hidden flex-col h-26 justify-center-safe px-10 pb-2 text-[#16A34A] md:pr-5 sm:pr-5 md:flex'>
         <Link to="/">
           <span className=" text-6xl lg:text-7xl font-extrabold ">{title}</span>
           <p className='-mt-1.5 ml-1.5 lg:text-[13px] text-[#0f172a] md:text-[11px] sm:text-[11px]'>{subTitle}</p>
         </Link>
       </div>
-      <div className='flex h-26 flex-col justify-center-safe px-3 pb-2 md:pr-5 sm:pr-5 2xl:hidden xl:hidden lg:hidden md:hidden sm:px-10'>
+      <div className='flex h-26 flex-col justify-center-safe px-3 pb-2 md:pr-5 sm:pr-5 md:hidden sm:px-10'>
         <Link to="/">
           <span className="font-extrabold text-[55px] px-4 rounded-full text-white bg-[#16A34A]">{title[0]}</span>
         </Link>

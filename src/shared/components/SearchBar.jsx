@@ -12,8 +12,15 @@ const SearchBar = ({ placeholder, hidden }) => {
             onChange={(e) => setSearchKeyword(e.target.value)} 
             className="bg-white border border-gray-400 rounded-md p-2 w-50 2xl:w-150 xl:w-130 lg:w-100 md:w-70 sm:w-80" 
             type="text" placeholder={placeholder} 
-            value={searchKeyword}/>
-            <DropDown dropdownOptions={productCategories} value={selectedCategory} onSetValue={setSelectedCategory}/>
+            value={searchKeyword}
+          />
+          <DropDown 
+            dropdownOptions={productCategories} 
+            value={selectedCategory} 
+            onSetValue={setSelectedCategory} 
+            defaultOption={'All Products'}
+            className='bg-white border border-solid border-gray-400 rounded-md p-2 w-35 lg:w-40 text-gray-700'
+          />
         </div>
 
         

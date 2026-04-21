@@ -12,10 +12,10 @@ const CartList = () => {
   
   return (
     <section className='bg-[#F3F4F6] px-10 py-1'>
-        <div className='px-1 text-2xl text-gray-700 mt-2 pb-2' >
+        <div className='px-1 text-xl text-gray-700 mt-13 mb-2' >
                 { cartSize > 0 
                     ? 
-                      <span>{cartProducts.length} Product(s) Found!</span> 
+                      <span><strong>{cartProducts.length}</strong> product(s) found!</span> 
                     : 
                       <PageNotification>Cart is empty!</PageNotification>
                 }   

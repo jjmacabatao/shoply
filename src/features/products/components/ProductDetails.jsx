@@ -16,9 +16,10 @@ const ProductDetails = ( { product }) => {
         <div className='flex flex-col lg:flex-row md:flex-row items-center md:items-start bg-white gap-10 sm:gap-5  '>
             {/* Product Image */}
             <div className='relative bg-gray-100 rounded-2xl'>
-                <button className="absolute top-2 right-2 p-2 hover:scale-120 active:scale-95 transition">
-                    <Heart size={35} strokeWidth={1} className={`text-gray-500 ${favorite.includes(product.id) && 'fill-red-600 text-red-600'}`} onClick={()=>handleOnclickAddToFavorite(product.id)}/>
-                </button>
+                <Heart size={35} strokeWidth={1} 
+                    className={`text-gray-500 absolute top-2 right-2 m-2 hover:scale-120 active:scale-95 transition ${favorite.includes(product.id) && 'fill-red-600 text-red-600'}`} 
+                    onClick={()=>handleOnclickAddToFavorite(product.id)}
+                />
                 <img src={product.images && product.images[0]} alt={product.title} className='object-contain w-150 sm:m-auto' loading='lazy'/>
             </div>
             {/* Product Details */}

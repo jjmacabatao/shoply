@@ -1,10 +1,16 @@
 import React from 'react'
 import { capitalizedFirstLetter } from '../../utils/'
 
-const DropDown = ( {dropdownOptions, value, onSetValue} ) => {
+const DropDown = ( {dropdownOptions, defaultOption, value, onSetValue, className, withLabel = false, label = ''} ) => {
   return (
-    <select value={value} onChange={(e) => onSetValue(e.target.value)} className="bg-white border border-solid border-gray-400 rounded-md lg:w-40 p-2 md:w-35 sm:w-35" >
-        <option value="">All Products</option>
+    <section className='flex flex-col items-start gap-1 sm:flex-row sm:items-baseline sm:gap-2'>
+      {withLabel && <span className='text-gray-700 text-lg'>{label} :</span>}
+      <select 
+        value={value} 
+        onChange={(e) => onSetValue(e.target.value)} 
+        className={className}
+    >
+        <option value="">{defaultOption}</option>
         {
             dropdownOptions.map((opt) => (
                 <option key={opt}  value={opt.toLowerCase()}>
@@ -13,6 +19,7 @@ const DropDown = ( {dropdownOptions, value, onSetValue} ) => {
             ))
         }
     </select>
+    </section>
   )
 }
 

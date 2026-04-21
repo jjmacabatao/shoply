@@ -24,3 +24,11 @@ export const favoriteInProducts = (products, favorite) => {
   );
   return filteredProducts.length;
 };
+
+export const sortingCategories = [
+  "Price: Low to High",
+  "Price: High to Low",
+  "Top Rated",
+  "Name: A to Z",
+  "Name: Z to A",
+];

@@ -16,10 +16,10 @@ const ProductCard = ({ product }) => {
 
      {/* Card Image */}
       <div className="relative flex items-center justify-center h-68 p-4">
-        <button className="absolute -top-2 right-0 p-2 hover:scale-120 active:scale-95 transition">
-          <Heart size={33} strokeWidth={1} className={`text-gray-500 ${favorite.includes(product.id) && 'fill-red-600 text-red-600'}`} onClick={()=>handleOnclickAddToFavorite(product.id)}/>
-        </button>
-
+        <Heart size={33} strokeWidth={1} 
+          className={`text-gray-500 absolute -top-2 right-0 hover:scale-120 active:scale-95 transition ${favorite.includes(product.id) && 'fill-red-600 text-red-600'}`} 
+          onClick={()=>handleOnclickAddToFavorite(product.id)}
+        />
         <img src={product.thumbnail}alt={product.title} className="h-65 object-contain"/>
       </div>
 
