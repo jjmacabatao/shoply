@@ -85,7 +85,17 @@ npm run lint
 
 ## 🚀 Deployment
 
-- Vercel ( see: https://shoply-sigma.vercel.app )
+- Vercel ( see: https://shoply-delta.vercel.app)
+
+  Note: A Vercel 404 (Not Found) error occurs when the application is refreshed on the following routes: **/products**, **/products/:id**, **/cart**, and **/favorites**.
+
+  Why it happens?
+
+  In a Single Page Application (like with React + React Router):
+
+  Navigation (**/cart**, **/products**, . . .) works in-app because JavaScript handles it.
+  But when you refresh, the browser requests **/cart** directly from the server.
+  Vercel looks for a real **/cart** file → doesn’t find it → **404**.
 
 ---
 

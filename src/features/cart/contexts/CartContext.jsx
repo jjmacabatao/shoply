@@ -38,7 +38,6 @@ export const CartProvider = ({children}) => {
 
     const addToCart = (product) => {
         console.log("add to cart is called");
-        console.log(cartProducts)
         const inCart = cartProducts.find((item) => item.item.id === product.id);
         if (inCart) {
             setCartProducts(updateCartProductQuantity(product.id,'increment'));
